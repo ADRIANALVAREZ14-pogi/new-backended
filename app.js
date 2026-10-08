@@ -1,9 +1,11 @@
 import express from "express";
 import studentRoutes from "./routes/studentRoutes.js";
-import bookRoutes from "./routes/bookSRoutes.js";
+import bookRoutes from "./routes/bookRoutes.js";
 
 //creates express app
 const app = express();
+
+app.use(express.json());
 
 /* Routes implementation */
 

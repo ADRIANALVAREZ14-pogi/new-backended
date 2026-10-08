@@ -5,3 +5,11 @@ export const getAllstudent = async () => {
     return rows;
 };
 
+export const insert = async (student) => {
+    const [result] = await pool.query(
+        "INSERT INTO student(name, srcode, program) VALUES (?, ?, ?)",
+        [student.name, student.srcode, student.program]
+    );
+
+    return result.insertId;
+};
