@@ -5,5 +5,6 @@ const studentRoutes = express.Router();
 
 studentRoutes.get('/all', studentController.fetchAllstudent);
 studentRoutes.post('/', studentController.createstudent);
+studentRoutes.put('/:id', studentController.editStudent);
 
 export default studentRoutes;

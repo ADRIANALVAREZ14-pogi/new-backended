@@ -22,3 +22,22 @@ export const createstudent = async(req, res) => {
         });
     }
 }
+
+export const editStudent = async (req, res) =>{
+    const {name, author} = req.body;
+    const { id } = req.params;
+    const student = {id, name, srcode, program};
+
+    try{
+        const updatedStudent = await studentService.updateStudentt(student);
+        res.status(200).json({
+            success: true,
+            message: updatedStudent
+        });    
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            error: "Internet Server Error"
+        });
+    }
+}
